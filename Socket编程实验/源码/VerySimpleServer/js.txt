@@ -1,0 +1,25 @@
+const data = {
+    message: "Hello, this is a POST request!"
+};
+
+// 发送 POST 请求
+fetch('http://127.0.0.1:5050', {
+    method: 'POST', // 使用 POST 方法
+    headers: {
+        'Content-Type': 'application/json', // 设置请求头
+    },
+    body: JSON.stringify(data) // 将数据对象转换为 JSON 字符串
+})
+.then(response => {
+    // 检查响应状态
+    if (!response.ok) {
+        throw new Error('Network response was not ok: ' + response.statusText);
+    }
+    return response.text(); // 返回响应文本
+})
+.then(data => {
+    console.log('Response from server:', data); // 打印服务器的响应
+})
+.catch(error => {
+    console.error('Error:', error); // 处理错误
+});

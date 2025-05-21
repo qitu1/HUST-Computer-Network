@@ -1,0 +1,3 @@
+listen_address=127.0.0.1
+port=5050
+document_root=D:/大三上/计网实验/模块一/VerySimpleServer
